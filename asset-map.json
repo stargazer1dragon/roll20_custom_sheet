@@ -1,0 +1,1395 @@
+{
+  "pack": "Valkyn 5e modular artwork",
+  "version": "0.3",
+  "asset_count": 38,
+  "root": "assets/ui/v3/",
+  "all_images": "RGBA PNG;4 source pixels per1 CSS px; all documented text/input regions fully transparent",
+  "assembly_rules": [
+    "The PNG dimensions are NOT their CSS display size. Set width/height from display_size_css_px.",
+    "Do not stretch a fixed PNG to a different aspect ratio. Reuse nine-slice frames for variable-height panels.",
+    "Keep labels, numbers, input lines, checkmarks, and dice formulas in HTML; no text is baked into the art.",
+    "Art does not replace actual inputs, buttons or native repeating-section controls. Backgrounds cannot capture clicks; decorative overlays must have pointer-events:none.",
+    "Use an opaque white or pale sheet/panel surface UNDER the transparent frame. Put editable controls above it; do not cover art with opaque field backgrounds.",
+    "The five currency fields are separate repeated controls; do not use the old three-circle inventory image.",
+    "The six ability modules and four characteristics modules are independent; do not use the old fixed column/composite PNGs.",
+    "For nine-slice PNGs, set border-image-slice in SOURCE pixels, explicit border-image-width in CSS pixels, and omit fill. In a pseudo-element use inset:0;pointer-events:none.",
+    "The art supports original 2014 placement but does not itself implement the layout. A follow-up sheet HTML/CSS integration is required."
+  ],
+  "reference_source": {
+    "repo": "https://github.com/Roll20/roll20-character-sheets/tree/master/DD5thEditionLegacy",
+    "local_evidence": "build_output_v0.3.2.zip/ORIGINAL_2014_SHEET.css and HTML",
+    "css_sha256": "ff27f7890890c6498708860cb1ebfbc5cd789de57189b3ab9196ffc635bba70c",
+    "basis": "Measured base AND decorated/theme overrides. Reference only; no Roll20 decorative artwork is included.",
+    "caution": "750px content width does not mean750px total decorated header. The theme explicitly uses850x140px header with a negative50px left offset. Native CSS metrics are not zoomed screenshot pixels.",
+    "important_distinction": "Base layout and decorated art overrides are separate CSS layers. The numeric metrics here are explicit source constraints or documented adapter sizes, never an assertion that public legacy source equals the current official sheet."
+  },
+  "assets": [
+    {
+      "file": "assets/ui/v3/valkyn-frame-panel-9slice.png",
+      "pixel_size": [
+        384,
+        384
+      ],
+      "display_size_css_px": [
+        96.0,
+        96.0
+      ],
+      "pixel_scale": 4,
+      "usage": [
+        "Core: attacks, inventory body, tools, other proficiencies, features/traits",
+        "Bio: appearance, backstory, allies/organizations, additional traits, treasure",
+        "Settings and NPC blocks; expandable spell detail panels"
+      ],
+      "scaling": "nine-slice",
+      "text_baked_in": false,
+      "sha256": "b98728098098960c6e7cda8a5fb890a0a767cb7967dc8654c45e89e01e0b2a83",
+      "clear_regions_css_px": {
+        "body": [
+          12,
+          12,
+          72,
+          72
+        ]
+      },
+      "nine_slice_source_px": [
+        80,
+        80,
+        80,
+        80
+      ],
+      "nine_slice_border_width_css_px": [
+        20.0,
+        20.0,
+        20.0,
+        20.0
+      ],
+      "nine_slice_note": "Keep corners fixed. Stretch only the straight edge zones; omit border-image fill.",
+      "notes": "One reusable frame, not separate duplicates for each list. At reference widths 243\u2013247 and 490px; height follows content.",
+      "measurement_basis": "Historical themed CSS uses the same 5eBorder source for multiple expanding sections and separate 5/10px border slices for tools and Bio."
+    },
+    {
+      "file": "assets/ui/v3/valkyn-frame-saves-skills-9slice.png",
+      "pixel_size": [
+        288,
+        288
+      ],
+      "display_size_css_px": [
+        72.0,
+        72.0
+      ],
+      "pixel_scale": 4,
+      "usage": [
+        "Saving Throws: six rows",
+        "Skills: eighteen rows"
+      ],
+      "scaling": "nine-slice",
+      "text_baked_in": false,
+      "sha256": "a6b90d4a7d5e87ae3bddbfb4fc0e6ceaa96dab7c945981c42e078f4c65e6fbbd",
+      "clear_regions_css_px": {
+        "body": [
+          10,
+          10,
+          52,
+          52
+        ]
+      },
+      "nine_slice_source_px": [
+        48,
+        48,
+        48,
+        48
+      ],
+      "nine_slice_border_width_css_px": [
+        12.0,
+        12.0,
+        12.0,
+        12.0
+      ],
+      "nine_slice_note": "Keep corners fixed. Stretch only the straight edge zones; omit border-image fill.",
+      "notes": "Render width165px. Rows and bottom caption remain live HTML; height is not baked into the image.",
+      "measurement_basis": "Historical .sheet-saving-throw-container and .sheet-skills-container are 165px wide and use one shared saves.svg border-image in the themed rule set."
+    },
+    {
+      "file": "assets/ui/v3/valkyn-frame-vital-9slice.png",
+      "pixel_size": [
+        320,
+        256
+      ],
+      "display_size_css_px": [
+        80.0,
+        64.0
+      ],
+      "pixel_scale": 4,
+      "usage": [
+        "Hit Dice",
+        "Death Saves",
+        "Class Resource",
+        "Other Resource",
+        "Additional repeating resources"
+      ],
+      "scaling": "nine-slice",
+      "text_baked_in": false,
+      "sha256": "4c3ffa96940f77c0f4c1b8ae1fcce6b0c73888a524e7f08ae0268c73ca945390",
+      "clear_regions_css_px": {
+        "body": [
+          11,
+          11,
+          58,
+          42
+        ]
+      },
+      "nine_slice_source_px": [
+        56,
+        56,
+        56,
+        56
+      ],
+      "nine_slice_border_width_css_px": [
+        14.0,
+        14.0,
+        14.0,
+        14.0
+      ],
+      "nine_slice_note": "Keep corners fixed. Stretch only the straight edge zones; omit border-image fill.",
+      "notes": "Allows paired 49%-width controls. Do not bake totals, dice, success/failure circles or resource names into art.",
+      "measurement_basis": "Historical .sheet-subcontainer is width49% in the decorated layout; shared vital-box border; resources71px high in the reference."
+    },
+    {
+      "file": "assets/ui/v3/valkyn-frame-characteristic-9slice.png",
+      "pixel_size": [
+        384,
+        320
+      ],
+      "display_size_css_px": [
+        96.0,
+        80.0
+      ],
+      "pixel_scale": 4,
+      "usage": [
+        "Personality Traits",
+        "Ideals",
+        "Bonds",
+        "Flaws"
+      ],
+      "scaling": "nine-slice",
+      "text_baked_in": false,
+      "sha256": "89347c3aa5184c0b4cb20b648468eef96e90d8247cf072a8e3db93a3b60b79b7",
+      "clear_regions_css_px": {
+        "body": [
+          13,
+          14,
+          70,
+          52
+        ]
+      },
+      "nine_slice_source_px": [
+        72,
+        72,
+        72,
+        72
+      ],
+      "nine_slice_border_width_css_px": [
+        18.0,
+        18.0,
+        18.0,
+        18.0
+      ],
+      "nine_slice_note": "Keep corners fixed. Stretch only the straight edge zones; omit border-image fill.",
+      "notes": "Reuse four times; every text area may expand independently. Replaces the four-compartment composite.",
+      "measurement_basis": "Historical .sheet-pibf uses independent text boxes and border-image, not one fixed four-panel illustration."
+    },
+    {
+      "file": "assets/ui/v3/valkyn-header-nameplate.png",
+      "pixel_size": [
+        1280,
+        376
+      ],
+      "display_size_css_px": [
+        320.0,
+        94.0
+      ],
+      "pixel_scale": 4,
+      "usage": [
+        "Character name on Core, Bio, Spells, Settings"
+      ],
+      "scaling": "fixed",
+      "text_baked_in": false,
+      "sha256": "71c54447450c02930ff6546fe851b5a60d8402fbf2549df96984f994f2e20b1c",
+      "clear_regions_css_px": {
+        "name": [
+          54,
+          28,
+          250,
+          28
+        ],
+        "caption": [
+          54,
+          60,
+          250,
+          13
+        ]
+      },
+      "notes": "Dedicated250px live name lane. Decoration footprint320x94 is an intentional adapter dimension, not a screenshot pixel measurement.",
+      "measurement_basis": "Historical name input/container width250px; decorated header has a separately overhanging scroll footprint."
+    },
+    {
+      "file": "assets/ui/v3/valkyn-header-information.png",
+      "pixel_size": [
+        1880,
+        416
+      ],
+      "display_size_css_px": [
+        470.0,
+        104.0
+      ],
+      "pixel_scale": 4,
+      "usage": [
+        "Core class/subclass/level/race fields",
+        "Bio age/size/height/weight/eyes/skin/hair fields"
+      ],
+      "scaling": "fixed",
+      "text_baked_in": false,
+      "sha256": "966d39a9f08098bdb1979918834f3c3dbea115da942949ca809d9abf4adc2483",
+      "clear_regions_css_px": {
+        "fields": [
+          15,
+          15,
+          440,
+          74
+        ]
+      },
+      "notes": "One frame shared between Core and Bio. NO divider grid: the two pages have different field arrangements. Header labels and underlines are live HTML.",
+      "measurement_basis": "The decorated2014 header-info overrides the base482px width to440px. This asset adds15px ornament clearance each side."
+    },
+    {
+      "file": "assets/ui/v3/valkyn-header-spell-summary-cell.png",
+      "pixel_size": [
+        576,
+        296
+      ],
+      "display_size_css_px": [
+        144.0,
+        74.0
+      ],
+      "pixel_scale": 4,
+      "usage": [
+        "Spellcasting Ability",
+        "Spell Save DC",
+        "Spell Attack Bonus"
+      ],
+      "scaling": "fixed",
+      "text_baked_in": false,
+      "sha256": "59a5c226aba7fcac6c1704a2de48914b15624c7444bca27659e9329a4bea978e",
+      "clear_regions_css_px": {
+        "value": [
+          12,
+          10,
+          120,
+          43
+        ],
+        "caption": [
+          10,
+          55,
+          124,
+          9
+        ]
+      },
+      "notes": "Reuse exactly three times. Single cells keep controls aligned and avoid stretching a combined three-part image.",
+      "measurement_basis": "Decorated header .sheet-part width144px; summary container uses three independently framed parts."
+    },
+    {
+      "file": "assets/ui/v3/valkyn-ability-frame.png",
+      "pixel_size": [
+        280,
+        296
+      ],
+      "display_size_css_px": [
+        70.0,
+        74.0
+      ],
+      "pixel_scale": 4,
+      "usage": [
+        "Six independently positioned ability modules"
+      ],
+      "scaling": "fixed",
+      "text_baked_in": false,
+      "sha256": "e8f709263e92ed2259b070b22bb7e668d4acd6403c50f8dead78578fd9d734f5",
+      "clear_regions_css_px": {
+        "name": [
+          9,
+          9,
+          52,
+          8
+        ],
+        "modifier": [
+          12,
+          18,
+          46,
+          27
+        ],
+        "score": [
+          22,
+          54,
+          26,
+          14
+        ]
+      },
+      "notes": "Reference display: LARGE modifier in upper window, smaller base/effective ability score in lower oval. No roll icon or numeral baked into art.",
+      "measurement_basis": "Base ability container70px wide,64px content height +10px bottom padding. Themed rule keeps70px column and independent ability modules."
+    },
+    {
+      "file": "assets/ui/v3/valkyn-ability-backdrop-9slice.png",
+      "pixel_size": [
+        280,
+        240
+      ],
+      "display_size_css_px": [
+        70.0,
+        60.0
+      ],
+      "pixel_scale": 4,
+      "usage": [
+        "Subtle backplate behind the six independent ability frames"
+      ],
+      "scaling": "nine-slice",
+      "text_baked_in": false,
+      "sha256": "127deef0d85e1d8d200487a76d57f9ddb1e9fdc7aaec07c53c20677e351428f9",
+      "clear_regions_css_px": {
+        "windows": [
+          5,
+          6,
+          60,
+          48
+        ]
+      },
+      "nine_slice_source_px": [
+        32,
+        20,
+        32,
+        20
+      ],
+      "nine_slice_border_width_css_px": [
+        8.0,
+        5.0,
+        8.0,
+        5.0
+      ],
+      "nine_slice_note": "Keep corners fixed. Stretch only the straight edge zones; omit border-image fill.",
+      "notes": "Optional. Stretch only center/rails; no fixed internal stat positions.",
+      "measurement_basis": "Historical .sheet-attributes-container uses ability-back separately from six ability frame backgrounds."
+    },
+    {
+      "file": "assets/ui/v3/valkyn-inspiration.png",
+      "pixel_size": [
+        652,
+        160
+      ],
+      "display_size_css_px": [
+        163.0,
+        40.0
+      ],
+      "pixel_scale": 4,
+      "usage": [
+        "Inspiration checkbox"
+      ],
+      "scaling": "fixed",
+      "text_baked_in": false,
+      "sha256": "e0a514d46680fc62fb1c82d2db111a43735192ddd3c095270d13afc36bf17b86",
+      "clear_regions_css_px": {
+        "value": [
+          10,
+          10.0,
+          20,
+          20
+        ],
+        "caption": [
+          44,
+          13.0,
+          105,
+          14
+        ]
+      },
+      "notes": "Separate value and caption. The caption is not part of the PNG.",
+      "measurement_basis": "Reference decorated Inspiration height40px; Proficiency50px. The passive control is a separate full-column module.163px sidebar;247px full-column adapter."
+    },
+    {
+      "file": "assets/ui/v3/valkyn-proficiency-bonus.png",
+      "pixel_size": [
+        652,
+        200
+      ],
+      "display_size_css_px": [
+        163.0,
+        50.0
+      ],
+      "pixel_scale": 4,
+      "usage": [
+        "Proficiency Bonus"
+      ],
+      "scaling": "fixed",
+      "text_baked_in": false,
+      "sha256": "e002d92d1e508ffdd31c1f7cceccc8cd58bf57281c6d6ac673e20f84d7a486fb",
+      "clear_regions_css_px": {
+        "value": [
+          10,
+          15.0,
+          20,
+          20
+        ],
+        "caption": [
+          44,
+          18.0,
+          105,
+          14
+        ]
+      },
+      "notes": "Separate value and caption. The caption is not part of the PNG.",
+      "measurement_basis": "Reference decorated Inspiration height40px; Proficiency50px. The passive control is a separate full-column module.163px sidebar;247px full-column adapter."
+    },
+    {
+      "file": "assets/ui/v3/valkyn-passive-perception.png",
+      "pixel_size": [
+        988,
+        160
+      ],
+      "display_size_css_px": [
+        247.0,
+        40.0
+      ],
+      "pixel_scale": 4,
+      "usage": [
+        "Passive Wisdom (Perception)"
+      ],
+      "scaling": "fixed",
+      "text_baked_in": false,
+      "sha256": "29952ba4d1a81d22818aa5384aa8436015f709773228b46e5b2d59a0b888a405",
+      "clear_regions_css_px": {
+        "value": [
+          10,
+          10.0,
+          20,
+          20
+        ],
+        "caption": [
+          44,
+          13.0,
+          189,
+          14
+        ]
+      },
+      "notes": "Separate value and caption. The caption is not part of the PNG.",
+      "measurement_basis": "Reference decorated Inspiration height40px; Proficiency50px. The passive control is a separate full-column module.163px sidebar;247px full-column adapter."
+    },
+    {
+      "file": "assets/ui/v3/valkyn-armor-class.png",
+      "pixel_size": [
+        300,
+        300
+      ],
+      "display_size_css_px": [
+        75.0,
+        75.0
+      ],
+      "pixel_scale": 4,
+      "usage": [
+        "Armor Class"
+      ],
+      "scaling": "fixed",
+      "text_baked_in": false,
+      "sha256": "6017d706f22d9775ab0ac519ddb6f3ad09ff34f7a53c086d530f08fce458897c",
+      "clear_regions_css_px": {
+        "value": [
+          20,
+          14,
+          35,
+          24
+        ],
+        "caption": [
+          20,
+          40,
+          35,
+          17
+        ]
+      },
+      "notes": "Shield shape; multiline ARMOR CLASS caption remains HTML.",
+      "measurement_basis": "Original decorated .sheet-ac has75px minimum height; separate AC.svg in75-ish px cell."
+    },
+    {
+      "file": "assets/ui/v3/valkyn-vital-stat.png",
+      "pixel_size": [
+        300,
+        300
+      ],
+      "display_size_css_px": [
+        75.0,
+        75.0
+      ],
+      "pixel_scale": 4,
+      "usage": [
+        "Initiative",
+        "Speed"
+      ],
+      "scaling": "fixed",
+      "text_baked_in": false,
+      "sha256": "b63b461608f3a067c790f98f3f7f646a80774b04c7c3b663f44ede34e32a28e6",
+      "clear_regions_css_px": {
+        "value": [
+          15,
+          14,
+          45,
+          28
+        ],
+        "caption": [
+          10,
+          49,
+          55,
+          13
+        ]
+      },
+      "notes": "Reuse twice next to AC, instead of stretching a three-cell artwork.",
+      "measurement_basis": "Historical init/speed use one shared vital-box background,75px minimum height."
+    },
+    {
+      "file": "assets/ui/v3/valkyn-hit-points.png",
+      "pixel_size": [
+        924,
+        380
+      ],
+      "display_size_css_px": [
+        231.0,
+        95.0
+      ],
+      "pixel_scale": 4,
+      "usage": [
+        "Current and maximum Hit Points"
+      ],
+      "scaling": "fixed",
+      "text_baked_in": false,
+      "sha256": "d0a5439b9445c05597357164ff4ba75fb4356c6285b322ad8b40b38b4c6d4879",
+      "clear_regions_css_px": {
+        "maximum": [
+          13,
+          11,
+          205,
+          16
+        ],
+        "current": [
+          16,
+          32,
+          199,
+          36
+        ],
+        "caption": [
+          13,
+          76,
+          205,
+          10
+        ]
+      },
+      "measurement_basis": "Themed HP width calc(100%-16px) in247px column =>231px; current frame95px. Temporary reference has min-height70px; this adapter uses its70px minimum."
+    },
+    {
+      "file": "assets/ui/v3/valkyn-temporary-hit-points.png",
+      "pixel_size": [
+        924,
+        280
+      ],
+      "display_size_css_px": [
+        231.0,
+        70.0
+      ],
+      "pixel_scale": 4,
+      "usage": [
+        "Temporary Hit Points"
+      ],
+      "scaling": "fixed",
+      "text_baked_in": false,
+      "sha256": "04488ee661401164b820a1cb9793812b57eb96c3e809d9194639d8e56fbeb4a3",
+      "clear_regions_css_px": {
+        "current": [
+          14,
+          13,
+          203,
+          30
+        ],
+        "caption": [
+          13,
+          50,
+          205,
+          10
+        ]
+      },
+      "measurement_basis": "Themed HP width calc(100%-16px) in247px column =>231px; current frame95px. Temporary reference has min-height70px; this adapter uses its70px minimum."
+    },
+    {
+      "file": "assets/ui/v3/valkyn-currency-value.png",
+      "pixel_size": [
+        164,
+        120
+      ],
+      "display_size_css_px": [
+        41.0,
+        30.0
+      ],
+      "pixel_scale": 4,
+      "usage": [
+        "CP",
+        "SP",
+        "EP",
+        "GP",
+        "PP"
+      ],
+      "scaling": "fixed",
+      "text_baked_in": false,
+      "sha256": "ea1257fe1463ae205e7dc24f42a60fc70e8487d9bff0d73d483f7b7b9f01f5db",
+      "clear_regions_css_px": {
+        "value": [
+          7,
+          6,
+          27,
+          17
+        ]
+      },
+      "notes": "Reuse five times for the HORIZONTAL money row in supplied current2014 screenshots. No three-coin inventory composite.",
+      "measurement_basis": "Five actual currency fields exist in reference HTML.41x30 is a new adapter width selected to fit five cells plus gaps in a231px inventory body; not a source literal."
+    },
+    {
+      "file": "assets/ui/v3/valkyn-coin-copper.png",
+      "pixel_size": [
+        56,
+        56
+      ],
+      "display_size_css_px": [
+        14.0,
+        14.0
+      ],
+      "pixel_scale": 4,
+      "usage": [
+        "Currency label icon: copper"
+      ],
+      "scaling": "fixed",
+      "text_baked_in": false,
+      "sha256": "521c8178dbeb70f568f0a0e2277d3466326905bab7e09a72f839111cff678b85",
+      "notes": "Decorative only. Currency abbreviation and amount remain live HTML.",
+      "measurement_basis": "Design adaptation to the reference layout"
+    },
+    {
+      "file": "assets/ui/v3/valkyn-coin-silver.png",
+      "pixel_size": [
+        56,
+        56
+      ],
+      "display_size_css_px": [
+        14.0,
+        14.0
+      ],
+      "pixel_scale": 4,
+      "usage": [
+        "Currency label icon: silver"
+      ],
+      "scaling": "fixed",
+      "text_baked_in": false,
+      "sha256": "a147d8a35255db69a9ac6cad21270d181cbdad8042fab3c435e521c0f746dfe7",
+      "notes": "Decorative only. Currency abbreviation and amount remain live HTML.",
+      "measurement_basis": "Design adaptation to the reference layout"
+    },
+    {
+      "file": "assets/ui/v3/valkyn-coin-electrum.png",
+      "pixel_size": [
+        56,
+        56
+      ],
+      "display_size_css_px": [
+        14.0,
+        14.0
+      ],
+      "pixel_scale": 4,
+      "usage": [
+        "Currency label icon: electrum"
+      ],
+      "scaling": "fixed",
+      "text_baked_in": false,
+      "sha256": "9cb2b020ca78dff7422485c9545305c88ea7e6dd7c1dfb1cb5b25a586d78b46b",
+      "notes": "Decorative only. Currency abbreviation and amount remain live HTML.",
+      "measurement_basis": "Design adaptation to the reference layout"
+    },
+    {
+      "file": "assets/ui/v3/valkyn-coin-gold.png",
+      "pixel_size": [
+        56,
+        56
+      ],
+      "display_size_css_px": [
+        14.0,
+        14.0
+      ],
+      "pixel_scale": 4,
+      "usage": [
+        "Currency label icon: gold"
+      ],
+      "scaling": "fixed",
+      "text_baked_in": false,
+      "sha256": "3460315b761222deb9a5ade73649cb981413a9523895548fc26c8436104bb79d",
+      "notes": "Decorative only. Currency abbreviation and amount remain live HTML.",
+      "measurement_basis": "Design adaptation to the reference layout"
+    },
+    {
+      "file": "assets/ui/v3/valkyn-coin-platinum.png",
+      "pixel_size": [
+        56,
+        56
+      ],
+      "display_size_css_px": [
+        14.0,
+        14.0
+      ],
+      "pixel_scale": 4,
+      "usage": [
+        "Currency label icon: platinum"
+      ],
+      "scaling": "fixed",
+      "text_baked_in": false,
+      "sha256": "e87a89485cd7bcbed29ecfd299be25396a59ae7b0b9d842ddd15812a4c7374c2",
+      "notes": "Decorative only. Currency abbreviation and amount remain live HTML.",
+      "measurement_basis": "Design adaptation to the reference layout"
+    },
+    {
+      "file": "assets/ui/v3/valkyn-spell-level.png",
+      "pixel_size": [
+        980,
+        200
+      ],
+      "display_size_css_px": [
+        245.0,
+        50.0
+      ],
+      "pixel_scale": 4,
+      "usage": [
+        "Level1\u20139 group headers"
+      ],
+      "scaling": "fixed",
+      "text_baked_in": false,
+      "sha256": "2efab6cc0fac70c03222c0884c993d3f5ee2c4e4daf0028db45347266d659e9a",
+      "clear_regions_css_px": {
+        "level": [
+          9,
+          12,
+          12,
+          26
+        ],
+        "total": [
+          38,
+          17,
+          93,
+          16
+        ],
+        "remaining": [
+          146,
+          17,
+          87,
+          16
+        ]
+      },
+      "notes": "Numbers/titles are not in the artwork. Spell rows BELOW the header are unframed native repeating lists.",
+      "measurement_basis": "Themed spell-level has50px height; normal spell row width245px. Badge plus two fields for slots; cantrip has one title area."
+    },
+    {
+      "file": "assets/ui/v3/valkyn-cantrip-level.png",
+      "pixel_size": [
+        980,
+        200
+      ],
+      "display_size_css_px": [
+        245.0,
+        50.0
+      ],
+      "pixel_scale": 4,
+      "usage": [
+        "Cantrip group header"
+      ],
+      "scaling": "fixed",
+      "text_baked_in": false,
+      "sha256": "f7fc8226c9e983bd4d400627fe73168741ea9aeafd58f5197c4d68f467aa06ba",
+      "clear_regions_css_px": {
+        "level": [
+          9,
+          12,
+          12,
+          26
+        ],
+        "caption": [
+          38,
+          17,
+          195,
+          16
+        ]
+      },
+      "notes": "Numbers/titles are not in the artwork. Spell rows BELOW the header are unframed native repeating lists.",
+      "measurement_basis": "Themed spell-level has50px height; normal spell row width245px. Badge plus two fields for slots; cantrip has one title area."
+    },
+    {
+      "file": "assets/ui/v3/valkyn-button-idle-9slice.png",
+      "pixel_size": [
+        256,
+        96
+      ],
+      "display_size_css_px": [
+        64.0,
+        24.0
+      ],
+      "pixel_scale": 4,
+      "usage": [
+        "Core/Bio/Spells/Settings tabs",
+        "Short/Long Rest buttons",
+        "Other sheet buttons"
+      ],
+      "scaling": "nine-slice",
+      "text_baked_in": false,
+      "sha256": "e53a910867eedf45760bed93859bc4915e42ca5f202dd6705a548eef92fc869e",
+      "clear_regions_css_px": {
+        "label": [
+          7,
+          5,
+          50,
+          14
+        ]
+      },
+      "nine_slice_source_px": [
+        24,
+        24,
+        24,
+        24
+      ],
+      "nine_slice_border_width_css_px": [
+        6.0,
+        6.0,
+        6.0,
+        6.0
+      ],
+      "nine_slice_note": "Keep corners fixed. Stretch only the straight edge zones; omit border-image fill.",
+      "notes": "State backgrounds only. Keep native controls and labels above. Size/width comes from HTML/CSS.",
+      "measurement_basis": "Design adaptation to the reference layout"
+    },
+    {
+      "file": "assets/ui/v3/valkyn-button-active-9slice.png",
+      "pixel_size": [
+        256,
+        96
+      ],
+      "display_size_css_px": [
+        64.0,
+        24.0
+      ],
+      "pixel_scale": 4,
+      "usage": [
+        "Core/Bio/Spells/Settings tabs",
+        "Short/Long Rest buttons",
+        "Other sheet buttons"
+      ],
+      "scaling": "nine-slice",
+      "text_baked_in": false,
+      "sha256": "7525a48fd9d1dd8a7df9f676d1ecf92e6bd958498736263ccd5e5409975fcb5b",
+      "clear_regions_css_px": {
+        "label": [
+          7,
+          5,
+          50,
+          14
+        ]
+      },
+      "nine_slice_source_px": [
+        24,
+        24,
+        24,
+        24
+      ],
+      "nine_slice_border_width_css_px": [
+        6.0,
+        6.0,
+        6.0,
+        6.0
+      ],
+      "nine_slice_note": "Keep corners fixed. Stretch only the straight edge zones; omit border-image fill.",
+      "notes": "State backgrounds only. Keep native controls and labels above. Size/width comes from HTML/CSS.",
+      "measurement_basis": "Design adaptation to the reference layout"
+    },
+    {
+      "file": "assets/ui/v3/valkyn-caption-strip-3slice.png",
+      "pixel_size": [
+        800,
+        88
+      ],
+      "display_size_css_px": [
+        200.0,
+        22.0
+      ],
+      "pixel_scale": 4,
+      "usage": [
+        "Optional section title/label treatment",
+        "NPC section headings"
+      ],
+      "scaling": "three-slice-horizontal",
+      "text_baked_in": false,
+      "sha256": "ffa0e809ab82825e04b63dcbfdce96f855fcc735ba3202afcafb8b72f657a7fe",
+      "clear_regions_css_px": {
+        "label": [
+          16,
+          7,
+          168,
+          8
+        ]
+      },
+      "nine_slice_source_px": [
+        0,
+        56,
+        0,
+        56
+      ],
+      "nine_slice_border_width_css_px": [
+        0.0,
+        14.0,
+        0.0,
+        14.0
+      ],
+      "nine_slice_note": "Keep corners fixed. Stretch only the straight edge zones; omit border-image fill.",
+      "notes": "Use sparingly. Do not add tall banner rows above compact 2014 controls. Keep endcaps14px wide.",
+      "measurement_basis": "Design adaptation to the reference layout"
+    },
+    {
+      "file": "assets/ui/v3/valkyn-icon-edit.png",
+      "pixel_size": [
+        72,
+        72
+      ],
+      "display_size_css_px": [
+        18.0,
+        18.0
+      ],
+      "pixel_scale": 4,
+      "usage": [
+        "18px edit control glyph"
+      ],
+      "scaling": "fixed",
+      "text_baked_in": false,
+      "sha256": "b8409e7c01bd5ee3a8ca7d11beb2290c8f9afebf34bf68df75d910d7d2ae48c7",
+      "notes": "PNG decoration only; accessible live button/checkbox must supply events and label.",
+      "measurement_basis": "Design adaptation to the reference layout"
+    },
+    {
+      "file": "assets/ui/v3/valkyn-icon-settings.png",
+      "pixel_size": [
+        72,
+        72
+      ],
+      "display_size_css_px": [
+        18.0,
+        18.0
+      ],
+      "pixel_scale": 4,
+      "usage": [
+        "18px settings control glyph"
+      ],
+      "scaling": "fixed",
+      "text_baked_in": false,
+      "sha256": "fba3ce7ef7b3475538bb36f5ae6fa17e6521eb893f9156628276cf959ece53ab",
+      "notes": "PNG decoration only; accessible live button/checkbox must supply events and label.",
+      "measurement_basis": "Design adaptation to the reference layout"
+    },
+    {
+      "file": "assets/ui/v3/valkyn-icon-info.png",
+      "pixel_size": [
+        72,
+        72
+      ],
+      "display_size_css_px": [
+        18.0,
+        18.0
+      ],
+      "pixel_scale": 4,
+      "usage": [
+        "18px info control glyph"
+      ],
+      "scaling": "fixed",
+      "text_baked_in": false,
+      "sha256": "de72562a2fdb8dd10ecf205916b06eca93e7d97452a4f6770ee786c89f953830",
+      "notes": "PNG decoration only; accessible live button/checkbox must supply events and label.",
+      "measurement_basis": "Design adaptation to the reference layout"
+    },
+    {
+      "file": "assets/ui/v3/valkyn-icon-add.png",
+      "pixel_size": [
+        72,
+        72
+      ],
+      "display_size_css_px": [
+        18.0,
+        18.0
+      ],
+      "pixel_scale": 4,
+      "usage": [
+        "18px add control glyph"
+      ],
+      "scaling": "fixed",
+      "text_baked_in": false,
+      "sha256": "3659b4a80468d5290ed8c50ae2f1a357d04d6e1f6dc8957315b18b18f3a5f85a",
+      "notes": "PNG decoration only; accessible live button/checkbox must supply events and label.",
+      "measurement_basis": "Design adaptation to the reference layout"
+    },
+    {
+      "file": "assets/ui/v3/valkyn-icon-delete.png",
+      "pixel_size": [
+        72,
+        72
+      ],
+      "display_size_css_px": [
+        18.0,
+        18.0
+      ],
+      "pixel_scale": 4,
+      "usage": [
+        "18px delete control glyph"
+      ],
+      "scaling": "fixed",
+      "text_baked_in": false,
+      "sha256": "b7b22ddfb7b8f0c76ba8359d823e224fd31ac08671aacf048d494a3aab83fd50",
+      "notes": "PNG decoration only; accessible live button/checkbox must supply events and label.",
+      "measurement_basis": "Design adaptation to the reference layout"
+    },
+    {
+      "file": "assets/ui/v3/valkyn-icon-lock.png",
+      "pixel_size": [
+        72,
+        72
+      ],
+      "display_size_css_px": [
+        18.0,
+        18.0
+      ],
+      "pixel_scale": 4,
+      "usage": [
+        "18px lock control glyph"
+      ],
+      "scaling": "fixed",
+      "text_baked_in": false,
+      "sha256": "7d6eb22bee4bf622dc3fe08929b43b9c5a7b79471ed5a46b7ece67d058010458",
+      "notes": "PNG decoration only; accessible live button/checkbox must supply events and label.",
+      "measurement_basis": "Design adaptation to the reference layout"
+    },
+    {
+      "file": "assets/ui/v3/valkyn-icon-unlock.png",
+      "pixel_size": [
+        72,
+        72
+      ],
+      "display_size_css_px": [
+        18.0,
+        18.0
+      ],
+      "pixel_scale": 4,
+      "usage": [
+        "18px unlock control glyph"
+      ],
+      "scaling": "fixed",
+      "text_baked_in": false,
+      "sha256": "fea37c9c34754c123f1254487a894e685b0efb755e29e16646ed2f84719bc1ef",
+      "notes": "PNG decoration only; accessible live button/checkbox must supply events and label.",
+      "measurement_basis": "Design adaptation to the reference layout"
+    },
+    {
+      "file": "assets/ui/v3/valkyn-icon-drag.png",
+      "pixel_size": [
+        72,
+        72
+      ],
+      "display_size_css_px": [
+        18.0,
+        18.0
+      ],
+      "pixel_scale": 4,
+      "usage": [
+        "18px drag control glyph"
+      ],
+      "scaling": "fixed",
+      "text_baked_in": false,
+      "sha256": "c7a2c35121536b3834532485f8b389e485d207ee4555cdf86e198d204d60214f",
+      "notes": "PNG decoration only; accessible live button/checkbox must supply events and label.",
+      "measurement_basis": "Design adaptation to the reference layout"
+    },
+    {
+      "file": "assets/ui/v3/valkyn-icon-die.png",
+      "pixel_size": [
+        72,
+        72
+      ],
+      "display_size_css_px": [
+        18.0,
+        18.0
+      ],
+      "pixel_scale": 4,
+      "usage": [
+        "18px die control glyph"
+      ],
+      "scaling": "fixed",
+      "text_baked_in": false,
+      "sha256": "4ce580dea1e427b747bbc3619fad8835cb9fbd813c2761742673ca9b7b83e1ad",
+      "notes": "PNG decoration only; accessible live button/checkbox must supply events and label.",
+      "measurement_basis": "Design adaptation to the reference layout"
+    },
+    {
+      "file": "assets/ui/v3/valkyn-icon-check.png",
+      "pixel_size": [
+        72,
+        72
+      ],
+      "display_size_css_px": [
+        18.0,
+        18.0
+      ],
+      "pixel_scale": 4,
+      "usage": [
+        "18px check control glyph"
+      ],
+      "scaling": "fixed",
+      "text_baked_in": false,
+      "sha256": "1b8054a88e67d99ef2b0af8aec125826d619e999065b877d96c1c65ff5109c09",
+      "notes": "PNG decoration only; accessible live button/checkbox must supply events and label.",
+      "measurement_basis": "Design adaptation to the reference layout"
+    },
+    {
+      "file": "assets/ui/v3/valkyn-frame-group-backdrop-9slice.png",
+      "pixel_size": [
+        384,
+        384
+      ],
+      "display_size_css_px": [
+        96.0,
+        96.0
+      ],
+      "pixel_scale": 4,
+      "usage": [
+        "Vitals group backdrop",
+        "Characteristics group backdrop"
+      ],
+      "scaling": "nine-slice",
+      "text_baked_in": false,
+      "sha256": "56bf27d17d9c0217172da3abbe2d710976f7ad5f7d06aa42bccc17e7880b107c",
+      "clear_regions_css_px": {
+        "body": [
+          12,
+          12,
+          72,
+          72
+        ]
+      },
+      "nine_slice_source_px": [
+        80,
+        80,
+        80,
+        80
+      ],
+      "nine_slice_border_width_css_px": [
+        20.0,
+        20.0,
+        20.0,
+        20.0
+      ],
+      "nine_slice_note": "Keep corners fixed. Stretch only the straight edge zones; omit border-image fill.",
+      "notes": "Optional faint group frame. Interior completely transparent; each child is separately framed.",
+      "measurement_basis": "Design adaptation to the reference layout"
+    }
+  ],
+  "component_lookup": {
+    "header_name": {
+      "asset": "assets/ui/v3/valkyn-header-nameplate.png",
+      "target_css_box": [
+        320,
+        94
+      ]
+    },
+    "header_core_and_bio_info": {
+      "asset": "assets/ui/v3/valkyn-header-information.png",
+      "target_css_box": [
+        470,
+        104
+      ]
+    },
+    "header_spellcasting_each_of_three": {
+      "asset": "assets/ui/v3/valkyn-header-spell-summary-cell.png",
+      "target_css_box": [
+        144,
+        74
+      ]
+    },
+    "ability_each_of_six": {
+      "asset": "assets/ui/v3/valkyn-ability-frame.png",
+      "target_css_box": [
+        70,
+        74
+      ]
+    },
+    "inspiration": {
+      "asset": "assets/ui/v3/valkyn-inspiration.png",
+      "target_css_box": [
+        163,
+        40
+      ]
+    },
+    "proficiency_bonus": {
+      "asset": "assets/ui/v3/valkyn-proficiency-bonus.png",
+      "target_css_box": [
+        163,
+        50
+      ]
+    },
+    "saving_throws": {
+      "asset": "assets/ui/v3/valkyn-frame-saves-skills-9slice.png",
+      "target_css_box": [
+        165,
+        "auto"
+      ]
+    },
+    "skills": {
+      "asset": "assets/ui/v3/valkyn-frame-saves-skills-9slice.png",
+      "target_css_box": [
+        165,
+        "auto"
+      ]
+    },
+    "passive_perception": {
+      "asset": "assets/ui/v3/valkyn-passive-perception.png",
+      "target_css_box": [
+        247,
+        40
+      ]
+    },
+    "tools_custom_skills": {
+      "asset": "assets/ui/v3/valkyn-frame-panel-9slice.png",
+      "target_css_box": [
+        247,
+        "auto"
+      ]
+    },
+    "other_proficiencies_languages": {
+      "asset": "assets/ui/v3/valkyn-frame-panel-9slice.png",
+      "target_css_box": [
+        247,
+        "auto"
+      ]
+    },
+    "armor_class": {
+      "asset": "assets/ui/v3/valkyn-armor-class.png",
+      "target_css_box": [
+        75,
+        75
+      ]
+    },
+    "initiative_speed_each": {
+      "asset": "assets/ui/v3/valkyn-vital-stat.png",
+      "target_css_box": [
+        75,
+        75
+      ]
+    },
+    "hit_points": {
+      "asset": "assets/ui/v3/valkyn-hit-points.png",
+      "target_css_box": [
+        231,
+        95
+      ]
+    },
+    "temporary_hit_points_minimum_adapter": {
+      "asset": "assets/ui/v3/valkyn-temporary-hit-points.png",
+      "target_css_box": [
+        231,
+        70
+      ]
+    },
+    "hit_dice_death_saves_each": {
+      "asset": "assets/ui/v3/valkyn-frame-vital-9slice.png",
+      "target_css_box": [
+        "49%",
+        "auto"
+      ]
+    },
+    "resource_boxes_each": {
+      "asset": "assets/ui/v3/valkyn-frame-vital-9slice.png",
+      "target_css_box": [
+        "49%",
+        71
+      ]
+    },
+    "personality_ideals_bonds_flaws_each": {
+      "asset": "assets/ui/v3/valkyn-frame-characteristic-9slice.png",
+      "target_css_box": [
+        247,
+        "auto"
+      ]
+    },
+    "attack_list": {
+      "asset": "assets/ui/v3/valkyn-frame-panel-9slice.png",
+      "target_css_box": [
+        247,
+        "auto"
+      ]
+    },
+    "inventory_list": {
+      "asset": "assets/ui/v3/valkyn-frame-panel-9slice.png",
+      "target_css_box": [
+        247,
+        "auto"
+      ]
+    },
+    "features_traits": {
+      "asset": "assets/ui/v3/valkyn-frame-panel-9slice.png",
+      "target_css_box": [
+        247,
+        "auto"
+      ]
+    },
+    "bio_left_column_boxes": {
+      "asset": "assets/ui/v3/valkyn-frame-panel-9slice.png",
+      "target_css_box": [
+        247,
+        "auto"
+      ]
+    },
+    "bio_right_column_boxes": {
+      "asset": "assets/ui/v3/valkyn-frame-panel-9slice.png",
+      "target_css_box": [
+        490,
+        "auto"
+      ]
+    },
+    "spell_level_header_1_through_9": {
+      "asset": "assets/ui/v3/valkyn-spell-level.png",
+      "target_css_box": [
+        245,
+        50
+      ]
+    },
+    "cantrip_header": {
+      "asset": "assets/ui/v3/valkyn-cantrip-level.png",
+      "target_css_box": [
+        245,
+        50
+      ]
+    },
+    "settings_and_npc_blocks": {
+      "asset": "assets/ui/v3/valkyn-frame-panel-9slice.png",
+      "target_css_box": [
+        "auto",
+        "auto"
+      ]
+    },
+    "currency_input_each_of_five": {
+      "asset": "assets/ui/v3/valkyn-currency-value.png",
+      "target_css_box": [
+        41,
+        30
+      ]
+    }
+  },
+  "scope": "Complete modular replacement art set for the supplied Core/Bio/Spells layouts, plus reusable Settings/NPC/button art. All symbols, labels and values that change remain HTML.",
+  "not_included": "No full sheet HTML/CSS, old ui_01\u2013ui_10 composites, previews, source backups, Roll20 illustrations, rulebook text, logos, or font files.",
+  "integration_status": "Prepared and checked locally; not integrated into or runtime-tested with Roll20. Existing stylesheet will continue using old artwork until updated."
+}
